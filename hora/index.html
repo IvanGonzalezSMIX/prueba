@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div></div>
+
+    <script>
+
+        function hora() {
+            const fecha = new Date();
+            const hora = fecha.getHours().toString().padStart(2, '0');
+            const minuto = fecha.getMinutes().toString().padStart(2, '0');
+            const segundo = fecha.getSeconds().toString().padStart(2, '0');
+
+            document.querySelector('div').innerHTML = `${hora}:${minuto}:${segundo}`;
+            
+        }
+
+        setInterval(hora, 1000)
+
+    </script>
+
+</body>
+</html>
