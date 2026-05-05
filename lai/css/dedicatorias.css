@@ -1,0 +1,183 @@
+body{
+
+    grid-template-rows: 3fr 26fr 5fr;
+    grid-template-areas: 
+    "cap cap cap cap cap cap cap cap cap cap"
+    "cos cos cos cos cos cos cos cos cos cos"
+    "pie pie pie pie pie pie pie pie pie pie";
+
+}
+
+header{
+
+    grid-area: cap;
+
+}
+
+section{
+
+    grid-area: cos;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "d1 d2 d3 d4"
+    "d5 d6 d7 d8"
+    "d9 d10 d11 d12";
+    overflow: hidden;
+
+}
+
+footer{
+
+    grid-area: pie;
+
+}
+
+section > section {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+
+    div:nth-child(2){
+
+        border-left: 225px solid rgb(231, 231, 231);
+        border-right: 225px solid transparent;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        position: relative;
+        height: 240px;
+        transform-origin: left center;
+        z-index: 2;
+
+    }
+
+    div:nth-child(3){
+
+        border-right: 225px solid rgb(243, 243, 243);
+        border-left: 225px solid transparent;
+        border-top: 8px solid transparent;
+        border-bottom: solid 8px transparent;
+        height: 240px;
+        position: absolute;
+        transform-origin: right center;
+        z-index: 2;
+
+    }
+
+    p{
+
+        background-color: antiquewhite;
+        min-height: 200px;
+        width: 400px;
+        position: absolute;
+        padding: 20px;
+        z-index: 0;
+        color: rgb(109, 48, 48);
+        font-weight: 600;
+
+    }
+
+    button{
+
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: rgb(143, 143, 143);
+        border: none;
+        border-radius: 50%;
+        z-index: 10;
+        margin-top: -215px;
+        
+        &.activo ~ div:first-of-type{
+
+            transform: translate(-300px);
+            transition: 0.3s ease;
+
+        }
+
+        &.activo ~ div:nth-of-type(2){
+
+            transform: translate(300px);
+            transition: 0.3s ease;
+
+        }
+
+    }
+
+}
+
+section > section:first-of-type{
+
+    grid-area: d1;
+
+}
+
+section > section:nth-of-type(2){
+
+    grid-area: d2;
+    
+}
+
+section > section:nth-of-type(3){
+
+    grid-area: d3;
+
+}
+
+section > section:nth-of-type(4){
+
+    grid-area: d4;
+
+}
+
+section > section:nth-of-type(5){
+
+    grid-area: d5;
+
+}
+
+section > section:nth-of-type(6){
+
+    grid-area: d6;
+
+}
+
+section > section:nth-of-type(7){
+
+    grid-area: d7;
+
+}
+
+section > section:nth-of-type(8){
+
+    grid-area: d8;
+
+}
+
+section > section:nth-of-type(9){
+
+    grid-area: d9;
+
+}
+
+section > section:nth-of-type(10){
+
+    grid-area: d10;
+
+}
+
+section > section:nth-of-type(11){
+
+    grid-area: d11;
+
+}
+
+section > section:nth-of-type(12){
+
+    grid-area: d12;
+
+}

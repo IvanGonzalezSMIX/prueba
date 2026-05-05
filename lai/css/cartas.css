@@ -1,0 +1,374 @@
+body{
+
+    grid-template-rows: 2fr 20fr 4fr;
+    grid-template-areas: 
+    "cap cap cap cap cap cap cap cap cap cap"
+    "cos cos cos cos cos cos cos cos cos cos"
+    "pie pie pie pie pie pie pie pie pie pie";
+
+}
+
+header{
+
+    grid-area: cap;
+    background-color: black;
+
+}
+
+section{
+
+    grid-area: cos;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "franja1 franja1 franja1 carta carta carta carta carta carta carta carta algo algo algo";
+    min-height: 850px;
+
+}
+
+.franja1{
+
+    grid-area: franja1;
+    border-right: dotted 3px white;
+    display: flex;
+    align-items: center;
+
+    img{
+
+        width: 100%;
+
+    }
+
+}
+
+
+.cuerpo{
+
+    grid-area: carta;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.franja2{
+
+    grid-area: algo;
+    border-left: dotted white 3px;
+    display: flex;
+    align-items: center;
+
+    img{
+
+        width: 100%;
+        transform: rotateY(180deg);
+
+    }
+
+}
+
+footer{
+
+    grid-area: pie;
+
+}
+
+.cuerpo > .carta-arriba{
+
+    border-left: 400px solid transparent;
+    border-right: 400px solid transparent;
+    border-bottom: 250px solid transparent;
+    border-top: 250px solid white;
+    position: absolute;
+    z-index: 0;
+
+    transform-origin: top;
+
+}
+
+.cuerpo > .carta{
+
+    border-left: 400px solid rgb(240, 240, 240);
+    border-right: 400px solid rgb(240, 240, 240);
+    border-bottom: 250px solid rgb(240, 240, 240);
+    border-top: 250px solid transparent;
+    position: relative;
+    z-index: 3;
+
+}
+
+
+
+.cor{
+
+    height: 30px;
+    width: 30px;
+    transform: rotate(45deg);
+    background-color: red;
+    transition: 1s;
+
+}
+
+.cuerpo > main{
+
+    height: 800px;
+    width: 795px;
+    background-color: rgb(217, 226, 180);
+    display: none;
+    margin-top: 100px;
+    z-index: 2;
+    position: absolute;
+    border-radius: 10px;
+
+    div{
+
+        margin: 10px;
+        padding: 10px;
+        border: dotted 4px rgb(184, 62, 62);
+        height: 90%;
+
+        img{
+
+            margin: auto;
+            display: block;
+            height: 180px;
+            width: 180px;
+
+        }
+
+        ul{
+
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: rgb(184, 62, 62);
+
+            a{
+
+                text-decoration: none;
+
+                li{
+
+                    color: rgb(255, 255, 255);
+                    font-weight: 600;
+                    height: 50px;
+                    width: 90%;
+                    background-color: rgb(184, 62, 62);
+                    margin: 10px auto;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    &:hover{
+
+                        background-color: rgb(211, 78, 78);
+                        transform: scale(1.05);
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.cuerpo > button{
+
+    z-index: 10;
+    background: none;position: absolute;
+    position: absolute;
+    border: none;
+    
+    &:hover{
+
+        animation: latido infinite 1s ease-in;
+
+    }
+
+    &.activo > .cor{
+
+        animation: corazon 1s ease-out forwards;
+        transform: scale(1.2) rotate(225deg);
+        margin-left: 0;
+    }
+
+    &.activo ~ main{
+
+        
+        display: block;
+        transform: translate(0px, -50px);
+        z-index: 0;
+        animation: subir 1.2s linear; 
+
+    }
+
+    &.activo ~ .carta-arriba{
+
+        animation: carta-arriba ease-out 1s forwards;
+
+    }
+
+    &.activo ~ .carta{
+
+        animation: carta ease-out 1s forwards;
+
+    }
+
+}
+
+
+.cor::after, .cor::before{
+
+    content: "";
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    position: absolute;
+    border-radius: 50%;
+
+}
+
+.cor::before{
+
+    top: 0;
+    left: -15px;
+
+}
+
+.cor::after{
+
+    top: -15px;
+    left: 0;
+
+}
+
+@keyframes subir{
+
+    0%{
+
+        transform: translate(0px);
+        margin-top: 0px;
+        height: 500px;
+
+
+    }
+
+    50%{
+
+        transform: translate(0px);
+        margin-top: 0px;
+        height: 500px;
+
+    }
+
+    100%{
+
+        transform: translate(0px, -40px);
+
+    }
+
+}
+
+@keyframes carta{
+
+    0%{
+
+        transform: translateY(0px);
+
+    }
+
+    50%{
+
+        transform: translateY(0px);
+
+    }
+
+    100%{
+
+        transform: translateY(150px);
+
+    }
+
+}
+
+@keyframes corazon{
+
+    0%{
+
+        transform: translateY(0px) rotate(45deg);
+
+    }
+
+    50%{
+
+        transform: translateY(0px) rotate(45deg);
+
+    }
+
+    100%{
+
+        transform: translateY(150px) rotate(225deg) scale(1.2);
+
+    }
+
+}
+
+
+@keyframes carta-arriba{
+
+    0%{
+
+        transform: translateY(0px);
+        z-index: 3;
+
+    }
+
+    25%{
+
+        z-index: 1;
+
+    }
+
+    50%{
+
+        transform: translateY(0px) rotateX(180deg);
+
+    }
+
+    100%{
+
+        transform: translateY(150px) rotateX(180deg);
+
+    }
+
+}
+
+@keyframes latido{
+
+    0%{
+
+        transform: scale(1.0);
+
+    }
+
+    50%{
+
+        transform: scale(1.2);
+
+    }
+
+    100%{
+
+        transform: scale(1.0);
+
+    }
+
+}

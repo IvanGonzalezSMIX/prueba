@@ -1,0 +1,290 @@
+body{
+
+    grid-template-rows: 2fr 58fr 4fr;
+    grid-template-areas: 
+    "cap cap cap cap cap cap cap cap cap cap"
+    "cos cos cos cos cos cos cos cos cos cos"
+    "pie pie pie pie pie pie pie pie pie pie";
+
+}
+
+header{
+
+    grid-area: cap;
+    background-color: black;
+
+}
+
+section{
+
+    grid-area: cos;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "carrusel carrusel carrusel" 
+    "cart1 cart2 cart3"
+    "cart4 cart4 cart5";
+
+}
+
+footer{
+
+    grid-area: pie;
+
+}
+
+/*----------- carrusel ----------*/
+
+section > section{
+
+    grid-area: carrusel;
+    display: flex;
+    overflow-x: auto; /* no he entendido una mierda para que sirve esto */
+    scroll-behavior: smooth; /* para poder pasar entre imagenes */ 
+    anchor-name: --carrusel; 
+    scroll-snap-type: x mandatory; /* tampoco he entendido una mierda para que sirve esta cosa */
+
+}
+
+section section::scroll-marker-group{
+
+    display: flex;
+    justify-content: center;
+    gap: 0.5%;
+
+}
+
+figure{
+
+    height: 75vh;
+    margin: 0.8%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+
+    img{
+
+        height: 100%;
+        transition: 0.3s;
+
+        &:hover{
+
+            transform: scale(1.015);
+
+        }
+
+    }
+
+}
+
+figure:last-of-type{
+
+    scroll-snap-align: end;
+
+}
+
+figure::scroll-marker{
+
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    background-color: pink;
+    border-radius: 50%;
+
+}
+
+figure::scroll-marker:target-current{
+
+    border: solid 1px deeppink;
+
+}
+
+section > section::-webkit-scrollbar{
+
+    display: none;
+
+}
+
+/* botones carrusel */
+section > section::scroll-button(right), section > section::scroll-button(left){
+
+    content: '\2192';
+    background: black;
+    color: white;
+    font-weight: 900;
+    border: none;
+    font-size: 2rem;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0.0.5%;
+    position: absolute;
+    z-index: 2;
+
+}
+
+/*----------- carrusel ----------*/
+
+/*--------- cartas ---------*/
+
+section > div{
+
+    background-color: rgb(0, 0, 0);
+    height: 700px;
+    width: 90%;
+    position: relative;
+    margin: 50px auto;
+    border: rgb(177, 177, 177) solid 1px;
+    overflow: hidden;
+
+    .imagen{
+
+        z-index: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+
+    }
+}
+
+button{
+
+    z-index: 2;
+    right: 0;
+    display: block;
+    border: none;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    background: none;
+    
+    img{
+
+        height: 50px;
+        width: 50px;
+        transition: 0.2s;
+        background-color: rgba(0, 0, 0, 0.233);
+        border-radius: 100%;
+
+    }
+
+}
+
+section div main{
+
+    z-index: 1;
+    background-color: rgba(32, 0, 28, 0.589);
+    display: none;
+    width: 100%;
+    min-height: 50%;
+    border-top: solid rgb(177, 177, 177) 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    
+
+    p{
+
+        padding: 20px;
+
+    }
+
+    h2{
+
+        padding: 20px;
+        padding-bottom: 0;
+
+    }
+
+}
+
+section div:first-of-type{
+
+    grid-area: cart1;
+
+}
+
+section div:nth-of-type(2){
+
+    grid-area: cart2;
+
+}
+
+section div:nth-of-type(3){
+
+    grid-area: cart3;
+
+}
+
+section .horizontal{
+
+    grid-area: cart4;
+    width: 95%;
+
+}
+
+section div:nth-of-type(5){
+
+    grid-area: cart5;
+
+}
+
+button.activo > img{
+
+    transform: scale(0.9);
+
+}
+
+#boton.activo ~ main{ /* el ~ significa que el componente que estoy afectando es hermano */
+
+    display: block;
+    animation: subir 1s forwards;
+
+}
+
+#boton2.activo ~ main{ /* el ~ significa que el componente que estoy afectando es hermano */
+
+    display: block;
+    animation: subir 1s forwards;
+
+}
+
+#boton3.activo ~ main{ /* el ~ significa que el componente que estoy afectando es hermano */
+
+    display: block;
+    animation: subir 1s forwards;
+
+}
+
+#boton4.activo ~ main{ /* el ~ significa que el componente que estoy afectando es hermano */
+
+    display: block;
+    animation: subir 1s forwards;
+
+}
+
+#boton5.activo ~ main{ /* el ~ significa que el componente que estoy afectando es hermano */
+
+    display: block;
+    animation: subir 1s forwards;
+
+}
+
+/*--------- cartas ---------*/
+
+@keyframes subir{
+
+    0%{
+
+        transform: translateY(350px);
+
+    }
+
+    100%{
+
+        transform: translate(0px);
+        
+    }
+}

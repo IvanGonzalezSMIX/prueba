@@ -1,0 +1,64 @@
+*{
+
+    word-break: break-all;
+    margin: 0;
+    padding: 0;
+    color: #f4f4f4;
+    font-size: clamp(0.8rem, 3vw + 1rem, 1.2rem);
+    text-align: justify;
+    word-break: normal;
+    font-family: "Zalando sans", Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+body{
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    min-height: 100vh;
+    background-color: rgb(38, 10, 39);
+
+}
+
+body::-webkit-scrollbar{
+
+    display: none;
+
+}
+
+.carta-horizontal{
+
+    /* grid*/
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "tio tio t1 t1 t1 t1";
+
+    /*grid*/
+
+    background-color: rgb(32, 0, 28);
+
+}
+
+.carta-vertical{
+
+    /* grid */
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr 2fr;
+    grid-template-areas: 
+    "tio-v"
+    "t2";
+
+    /* grid */
+
+}
+
+.titulos{
+
+    font-size: clamp(1.4rem, 3vw + 1rem, 1.9rem);
+
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas</title>
+
+    <!-- icono -->
+
+        <link rel="icon" href="img/2331211.png">
+
+    <!-- icono -->
+
+    <!-- css -->
+
+        <link rel="stylesheet" href="css/marzo.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+
+    <!-- css -->
+
+    <!--fuente-->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <!--fuente-->
+</head>
+<body>
+
+    <!-- header -->
+
+        <header>
+
+            <nav>
+
+                <ul>
+
+                    <li><a href="fotos.html">FLORES/FOTOS</a></li>
+
+                    <li><a href="cartas.html">CARTAS</a></li>
+
+                    <li><a href="index.html"><img src="img/newjeansbunnyhop.gif" alt="hompeage"></a></li>
+
+                    <li><a href="dibujos.html">DIBUJOS</a></li>
+
+                    <li><a href="dedicatorias.html">DEDICATORIAS</a></li>
+
+                </ul>
+
+            </nav>
+
+        </header>   
+
+    <!-- header -->
+
+    <!-- cuerpo -->
+
+        <section>
+
+            <ul>
+
+                <li>
+
+                    <h2>
+
+                        Carta 1 28/03/2026
+
+                    </h2>
+
+                    <button id="boton">
+
+                        &#8595;
+
+                    </button>
+
+                    <script>
+
+                        let button = document.getElementById('boton'); //getelementbyid sirve para coger un elemento de mi documento (por eso pone document) por su id (no he sabido hacerlo con clases) 
+
+                        button.addEventListener('click', () => { // () => { } sirve para que lo hay dentro del claudator suceda al ocurrir el evento 'click' la flecha indica que lo que hay después es el cuerpo de la función y el claudator es ese cuerpo y lo que se ejecuta
+                            button.classList.toggle('activo'); //classlist.toggle es para añadirle la clase que se especifica después y si ya la tiene que la quite. eso hace que cada click cambie la clase y por eso se active o desactive.
+                        });
+
+                    </script>
+
+                    <div>
+
+                        <p>
+
+
+
+                        </p>
+
+                    </div>
+
+                </li>
+
+                <li>
+                    
+                    <h2>
+
+                        Carta 2 06/04/2026 (31/03/2026)
+
+                    </h2>
+
+                    <button id="boton2">
+
+                        &#8595;
+
+                    </button>
+
+                    <script>
+
+                        let button2 = document.getElementById('boton2'); //getelementbyid sirve para coger un elemento de mi documento (por eso pone document) por su id (no he sabido hacerlo con clases) 
+
+                        button2.addEventListener('click', () => { // () => { } sirve para que lo hay dentro del claudator suceda al ocurrir el evento 'click' la flecha indica que lo que hay después es el cuerpo de la función y el claudator es ese cuerpo y lo que se ejecuta
+                            button2.classList.toggle('activo'); //classlist.toggle es para añadirle la clase que se especifica después y si ya la tiene que la quite. eso hace que cada click cambie la clase y por eso se active o desactive.
+                        });
+
+                    </script>
+
+                    <div>
+
+                        <p>
+
+
+
+                        </p>
+
+                    </div>
+
+                </li>
+
+                <div class="carta-vertical">
+                    
+                    <img src="img/canciones/ab67616d0000b27353fe2aa4ea35a17bc3221532.jpeg" alt="">
+
+                    <div>
+
+                        
+                    </div>
+
+                </div>
+
+            </ul>
+
+            
+
+        </section>
+
+    <!-- cuerpo -->
+    
+    <!-- patas -->
+
+        <footer>
+
+            <!-- imagen -->
+
+            <main>
+
+                <img src="img/guys-i-need-help-with-two-trophies-v0-me40cwce9rhg1.webp" alt="">
+
+            </main>
+
+            <!-- imagen-->
+
+            <!-- texto -->
+
+            <p>
+
+                texto de footer 1 <br>
+                texto de footer 2 <br>
+                hostias, tengo numero de telefono: 283 82 23 12
+
+            </p>
+
+            <!-- texto -->
+
+            <!-- redes -->
+
+            <div>
+
+                <a href=""><img src="img/Insta_real.png" alt=""></a>
+                <a href=""><img src="img/twitter_real.png" alt=""></a>
+                <a href=""><img src="img/Tiktok_real.png" alt=""></a>
+                <a href=""><img src="img/Youtube_real.png" alt=""></a>
+
+            </div>
+
+            <!-- redes -->
+
+        </footer>
+
+    <!-- patas -->
+    
+</body>
+</html>

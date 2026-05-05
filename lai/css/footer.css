@@ -1,0 +1,56 @@
+/*---------- footer -----------*/
+
+footer{
+
+    background-color: rgb(24, 0, 20);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "ftr1 ftr2 ftr3";
+
+}
+
+footer main{
+
+    grid-area: ftr1;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    img{
+
+        height: 150px;
+        margin: 0 20px;
+        border: solid 1px rgb(133, 133, 133);
+
+    }
+
+}
+
+footer p{
+
+    grid-area: ftr2;
+    display: flex;
+    align-items: center;
+
+}
+
+footer div{
+
+    grid-area: ftr3;
+    display: flex;
+    align-items: center;
+    align-content: space-around;
+    justify-content: left;
+
+    img{
+
+        height: 40px;
+        margin: 0 20px;
+
+    }
+
+}
+
+/*---------- footer -----------*/

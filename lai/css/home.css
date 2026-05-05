@@ -1,0 +1,275 @@
+body{
+
+    grid-template-rows: 2fr 50fr 4fr;
+    grid-template-areas: 
+    "cap cap cap cap cap cap cap cap cap cap"
+    "cos cos cos cos cos cos cos cos cos cos"
+    "pie pie pie pie pie pie pie pie pie pie";
+
+}
+
+header{
+
+    grid-area: cap;
+    background-color: black;
+
+}
+
+footer{
+
+    grid-area: pie;
+
+}
+
+/*--------------------- cuerpo ---------------------*/
+
+section{
+
+    grid-area: cos;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 5fr 3fr 8fr 10fr;
+    grid-template-areas: 
+    "foto foto foto foto foto foto foto foto foto foto foto foto"
+    ". . . . . . . . . . . ."
+    "sec-c sec-c sec-c sec-c sec-c sec-c sec-c sec-c sec-c sec-c sec-c sec-c "
+    "pre pre pre pre pre pre pre pre pre pre pre pre";
+
+}
+
+/*---------------------- cuerpo ---------------------*/
+
+/*------------ pokacho -------------*/
+
+section div:first-of-type{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    grid-area: foto;
+    background-image: url(https://img.asmedia.epimg.net/resizer/v2/JZVKDELLC5MQ5JJ6QW2XDBM3WA.jpg?auth=b79eadc0c2fbc00ea475ae7dd267f40e080ba7b29f48477bcfee976611ee2153&width=1472&height=828&smart=true);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    h1{
+
+        anchor-name: --textocacho;
+        width: 850px;
+        text-align: center;
+        padding: 20px 0;
+        text-shadow: black 0 2px 3px;
+        
+    }
+
+}
+
+/*------------ pokacho -------------*/
+
+/*------------- seccion cartas -------------*/
+
+section div:nth-of-type(2){
+
+    grid-area: sec-c;
+    background-color: rgb(83, 21, 75);
+
+    /* grid */
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 7fr;
+    grid-template-areas: 
+    "tit tit tit tit"
+    "car1 car2 car3 car4";
+
+    /* grid */
+
+}
+
+/*------------- seccion cartas -------------*/
+
+.carta-horizontal{
+
+    position: absolute;
+    width: 850px;
+    height: 300px;
+    position-anchor: --textocacho;
+    top: anchor(bottom);
+    left: anchor(left);
+    transition: 0.5s;
+
+    &:hover{
+
+        transform: scale(1.1);
+        border-radius: 20px;
+
+    }
+
+    p{
+
+        grid-area: t1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+}
+
+.carta-horizontal main{
+
+    grid-area: tio;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    img{
+
+        position: relative;
+        height: 240px;
+        border-radius: 5px;
+        border: solid 1px white;
+
+    }
+
+}
+
+h2{
+
+    grid-area: tit;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/*--------- cartas verticales -------*/
+
+a{
+
+    text-decoration: none;
+
+}
+
+.carta-vertical{
+
+    width: 85%;
+    height: 500px;
+    margin: 20px auto;
+    background-color: rgb(32, 0, 28);
+    transition: 0.5s;
+    overflow: hidden;
+
+    main{
+
+        grid-area: tio-v;
+        padding: 0;
+
+        img{
+
+            height: 330px;
+            width: 100%;
+            object-fit: cover;
+            border-bottom: solid 2px rgb(212, 0, 159);
+
+        }
+
+    }
+
+    p{
+
+        grid-area: t2;
+        padding: 10px;
+        text-align: center;
+
+    }
+
+    &:hover{
+
+        transform: scale(1.05);
+        border-radius: 15px;
+
+    }
+
+}
+
+.carta-vertical:first-of-type{
+
+    grid-area: car1;
+
+}
+
+.carta-vertical:nth-of-type(2){
+
+    grid-area: car2;
+
+}
+
+.carta-vertical:nth-of-type(3){
+
+    grid-area: car3;
+
+}
+
+.carta-vertical:nth-of-type(4){
+
+    grid-area: car4;
+
+}
+
+/*--------- cartas verticales --------*/
+
+/*---------- texto pre-footer ----------*/ 
+
+section div:nth-of-type(4){
+
+    grid-area: pre;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "ft ft ft ft ft p p p p p p p";
+
+}
+
+section div:nth-of-type(4) img{
+
+    grid-area: ft;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+section div:nth-of-type(4) section{
+
+    grid-area: p;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 12fr;
+    grid-template-areas: 
+    "ti"
+    "te";
+
+    .titulos{
+
+        grid-area: ti;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    p{
+
+        grid-area: te;
+
+    }
+
+}
+
+/*--------- texto pre-footer ---------*/
